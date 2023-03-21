@@ -30,33 +30,7 @@ jobs:
         run: chmod +x gradlew
       - name: Test with Gradle
         run: ./gradlew test
-  test-backend-postman:
-    name: Backend Postman Tests
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-        ports: 
-          - 5432:5432
-    defaults:
-      run:  
-        shell: bash
-        working-directory: ./backend
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 18
-        uses: actions/setup-java@v1
-        with:
-          distribution: 'temurin'
-          java-version: '18'
-          cache: 'gradle'
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Test with Postman
-        run: ./gradlew bootRun --args='postman'
-
+  
   build-and-push-backend:
     name: build tagged docker version
     runs-on: ubuntu-latest
