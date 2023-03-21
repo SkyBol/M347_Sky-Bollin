@@ -26,8 +26,6 @@ backend/.idea/
 backend/build/
 backend/.gradle/
 backend/gradle/
-backend/gradlew
-backend/gradlew.bat
 
 
 frontend/node_modules
