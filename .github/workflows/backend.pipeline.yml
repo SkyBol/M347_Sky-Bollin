@@ -53,3 +53,4 @@ jobs:
           tags: 
             ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-backend:${{ github.sha }},
             ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-backend:latest
+
