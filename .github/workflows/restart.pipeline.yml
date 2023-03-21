@@ -1,15 +1,18 @@
 name: CICD-restart
 
 on: 
-  push
+  workflow_run:
+    workflows: ["CICD-Frontend", "CICD-Backend"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
   restart-server-docker:
     name: Restart server docker compose
     runs-on: ubuntu-latest
-    needs: [build-and-push-backend, build-and-push-frontend]
     defaults:
-      run:  
+      run:
         shell: bash
         working-directory: ./backend
     steps:
