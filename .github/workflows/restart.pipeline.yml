@@ -1,4 +1,4 @@
-name: CICD-Backend
+name: CICD-restart
 
 on: 
   push
