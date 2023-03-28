@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   frontend:
-    restart: unless-stopped
+    restart: always
     image: asuzas/docker-m347-frontend
     container_name: docker-m347-frontend
     env_file: .env
@@ -12,7 +12,7 @@ services:
       - 3000:80
 
   backend:
-    restart: unless-stopped
+    restart: always
     image: asuzas/docker-m347-backend
     container_name: docker-m347-backend
     ports:
@@ -23,7 +23,7 @@ services:
       - db
 
   db:
-    restart: unless-stopped
+    restart: always
     image: 'postgres:10-alpine'
     container_name: db_m347_Bollin
     environment:
