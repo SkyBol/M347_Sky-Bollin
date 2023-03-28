@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
   frontend:
-    mem_limit: 128m
     restart: unless-stopped
     image: asuzas/docker-m347-frontend
     container_name: docker-m347-frontend
@@ -13,7 +12,6 @@ services:
       - 3000:80
 
   backend:
-    mem_limit: 512M
     restart: unless-stopped.
     image: asuzas/docker-m347-backend
     container_name: docker-m347-backend
@@ -25,7 +23,6 @@ services:
       - db
 
   db:
-    mem_limit: 128m
     restart: unless-stopped
     image: 'postgres:10-alpine'
     container_name: db_m347_Bollin
