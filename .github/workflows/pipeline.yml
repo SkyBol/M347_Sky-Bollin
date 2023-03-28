@@ -116,3 +116,13 @@ jobs:
             docker pull asuzas/docker-m347-backend
             docker pull asuzas/docker-m347-frontend
             docker-compose up -d
+
+      - name: copying remote shell script using password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          source: .
+          target: ./gitHubRepo
