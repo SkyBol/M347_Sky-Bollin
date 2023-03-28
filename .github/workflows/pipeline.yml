@@ -89,19 +89,28 @@ jobs:
       - name: copying remote shell script using password
         uses: appleboy/scp-action@master
         with:
-          host: 10.1.31.12
-          username: ubuntu
-          password: 0mPerb17Eswvs40rLCJp
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           source: ./docker-compose.yml
           target: .
 
+      - name: Set up WireGuard
+        uses: egor-tensin/setup-wireguard@v1
+        with:
+          endpoint: '${{ secrets.VPN_ENDPOINT }}'
+          endpoint_public_key: '${{ secrets.VPN_ENDPOINT_PUBLIC_KEY }}'
+          ips: '${{ secrets.VPN_IPS }}'
+          allowed_ips: '${{ secrets.VPN_ALLOWED_IPS }}'
+          private_key: '${{ secrets.VPN_PRIVATE_KEY }}'
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: 10.1.31.12
-          username: ubuntu
-          password: 0mPerb17Eswvs40rLCJp
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
             docker pull asuzas/docker-m347-backend
