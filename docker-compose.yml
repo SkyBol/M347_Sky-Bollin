@@ -12,7 +12,7 @@ services:
       - 3000:80
 
   backend:
-    restart: unless-stopped.
+    restart: unless-stopped
     image: asuzas/docker-m347-backend
     container_name: docker-m347-backend
     ports:
