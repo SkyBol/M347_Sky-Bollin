@@ -103,6 +103,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
+            cd yaml
             docker pull asuzas/docker-m347-backend
             docker pull asuzas/docker-m347-frontend
             docker-compose up -d
