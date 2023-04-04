@@ -21,7 +21,7 @@ spec:
         kompose.version: 1.28.0 (c4137012e)
       creationTimestamp: null
       labels:
-        io.kompose.network/m347-sky-bollin-default: "true"
+        io.kompose.network/yaml-default: "true"
         io.kompose.service: backend
     spec:
       containers:

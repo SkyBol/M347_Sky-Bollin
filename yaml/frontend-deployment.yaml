@@ -21,7 +21,7 @@ spec:
         kompose.version: 1.28.0 (c4137012e)
       creationTimestamp: null
       labels:
-        io.kompose.network/m347-sky-bollin-default: "true"
+        io.kompose.network/yaml-default: "true"
         io.kompose.service: frontend
     spec:
       containers:
@@ -44,7 +44,7 @@ spec:
           image: asuzas/docker-m347-frontend:latest
           name: docker-m347-frontend
           ports:
-            - containerPort: 80
+            - containerPort: 8000
           resources: {}
       restartPolicy: Always
 status: {}
