@@ -141,8 +141,5 @@ jobs:
           port: 22
           script: |
             cd ./gitHubRepo/yaml
-            docker pull asuzas/docker-m347-backend
-            docker pull asuzas/docker-m347-frontend
-            docker-compose up -d
             kompose convert -f docker-compose.yml --out k8s-kompose.yaml
             kubectl apply -f k8s-kompose.yaml
