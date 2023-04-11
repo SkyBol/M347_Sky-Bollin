@@ -93,7 +93,7 @@ jobs:
           tags: 
             ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-frontend:${{ github.sha }},
             ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-frontend:latest,
-            ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-frontend:{{ needs.next-version-autoincrement.outputs.version }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/docker-m347-frontend:${{ needs.next-version-autoincrement.outputs.version }}
 
   restart-server-docker:
     name: Restart server docker compose
