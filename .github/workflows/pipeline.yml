@@ -6,7 +6,7 @@ on:
 jobs:
   next-version-autoincrement:
     name: Auto Version Increase & create new Release
-    permissions: write-all # Critical: Keep an Eye on this Job
+    permissions: write-all # Critical: Keep an Eye on this Job 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
