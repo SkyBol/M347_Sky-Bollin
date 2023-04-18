@@ -3,7 +3,7 @@ version: '3.7'
 services:
   frontend:
     restart: always
-    image: asuzas/docker-m347-frontend:0.0.3
+    image: asuzas/docker-m347-frontend:v0.0.4
     container_name: docker-m347-frontend
     env_file: .env
     depends_on:
@@ -13,7 +13,7 @@ services:
       - 8001:443
   backend:
     restart: always
-    image: asuzas/docker-m347-backend:0.0.3
+    image: asuzas/docker-m347-backend:v0.0.4
     container_name: docker-m347-backend
     ports:
       - 8080:8080
