@@ -130,7 +130,7 @@ items:
           imagePullPolicy: Always
           name: frontend
           ports:
-          - containerPort: 80
+          - containerPort: 80 
           resources: {}
         restartPolicy: Always
         serviceAccountName: ""
