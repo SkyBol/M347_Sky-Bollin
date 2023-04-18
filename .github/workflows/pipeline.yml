@@ -141,5 +141,4 @@ jobs:
           port: 22
           script: |
             cd ./gitHubRepo/yaml
-            kompose convert -f docker-compose.yml --out k8s-kompose.yaml
-            kubectl apply -f k8s-kompose.yaml
+            kubectl apply -f all.yaml
