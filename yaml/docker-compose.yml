@@ -3,7 +3,7 @@ version: '3.7'
 services:
   frontend:
     restart: always
-    image: asuzas/docker-m347-frontend:v0.0.4
+    image: asuzas/docker-m347-frontend:v0.0.5
     container_name: docker-m347-frontend
     env_file: .env
     depends_on:
@@ -11,9 +11,13 @@ services:
     ports:
       - 8000:80
       - 8001:443
+    labels:
+      kompose.image-pull-policy: "Always"
+      kompose.service.type: "NodePort"
+      kompose.service.nodeport.port: "30081"
   backend:
     restart: always
-    image: asuzas/docker-m347-backend:v0.0.4
+    image: asuzas/docker-m347-backend:v0.0.5
     container_name: docker-m347-backend
     ports:
       - 8080:8080
@@ -21,6 +25,10 @@ services:
       - DB_HOST=db
     depends_on:
       - db
+    labels:
+      kompose.image-pull-policy: "Always"
+      kompose.service.type: "NodePort"
+      kompose.service.nodeport.port: "30080"
 
   db:
     restart: always
