@@ -56,12 +56,15 @@ items:
           io.kompose.service: backend
       spec:
         containers:
-        - image: asuzas/docker-m347-backend:v0.0.7
+        - image: asuzas/docker-m347-backend:v0.0.8
           imagePullPolicy: Always
           name: backend
           ports:
           - containerPort: 8080
           resources: {}
+          env:
+          - name: DB_HOST
+            value: http://10.1.31.12:30101/
         restartPolicy: Always
         serviceAccountName: ""
         volumes: null
@@ -123,7 +126,7 @@ items:
           io.kompose.service: frontend
       spec:
         containers:
-        - image: asuzas/docker-m347-frontend:v0.0.7
+        - image: asuzas/docker-m347-frontend:v0.0.8
           imagePullPolicy: Always
           name: frontend
           ports:
